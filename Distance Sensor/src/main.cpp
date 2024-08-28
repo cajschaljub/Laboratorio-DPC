@@ -21,6 +21,8 @@ void loop() {
     Echo = pulseIn(echo,HIGH);
     Dist = Echo * 0.034 / 2;
     ant = Dist;
+    Serial.println(Dist);
+    
   for (size_t i = 0; i < 50; i++)
   {
     digitalWrite(trigger, HIGH);
@@ -29,16 +31,18 @@ void loop() {
     Echo = pulseIn(echo,HIGH);
     Dist = Echo * 0.034 / 2;
     Serial.print("Crudo ");
-    Serial.println(Dist);
+    Serial.println(ant);
     if ((Dist - ant) < 50)
     {
       avg += Dist;
+      ant = Dist;
     }
     
     
   }
   
   avg = avg / 50;
-  Serial.print("::: AVG: ");
+  Serial.print("::: AVG:");
   Serial.println(avg);
+  
 }
