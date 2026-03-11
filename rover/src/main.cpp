@@ -71,6 +71,10 @@ void vCameraSensorTask(void *pvParameters) {
   }
 }
 
+//********************************************************************************//
+//****************************** Actuation ***************************************//
+//********************************************************************************//
+
 // Left Motor Task
 void vLeftMotorTask(void *pvParameters) {
   LineData lineData;
@@ -278,4 +282,5 @@ void setup() {
 
 void loop() {
   // Empty. FreeRTOS will manage tasks
+
 }
